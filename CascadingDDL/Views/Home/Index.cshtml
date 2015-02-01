@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post,
+    new
+    {
+        id = "OrderLaptopFormID"
+    }))
+{
+    <fieldset>
+        <legend>Make an order</legend>
+        <div>
+            <label for="Manufacturers">Manufacturer</label>
+        </div>
+        <select id="ManufacturersID" name="Manufacturers"></select>
+        <div id="categoryDiv">
+            <label for="Categories">Category</label>
+            <select id="CategoryID" name="Categories"></select>
+        </div>
+        <div id="divLaptops"></div>
+    </fieldset>
+    <input type="submit" value="Return" id="SubmitID" />
+}
+
+<script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/GetManufacturer.js")"></script>
+<script src="@Url.Content("~/Scripts/manufacturerCategory.js")"></script>
